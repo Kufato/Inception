@@ -1,6 +1,5 @@
 all: build
 
-
 build:
 	sudo docker compose -f srcs/docker-compose.yml up -d --build
 
@@ -15,6 +14,6 @@ restart: clean build
 clean:
 	sudo docker compose -f srcs/docker-compose.yml down -v
 
-fclean:
+fclean: clean
 	sudo rm -rf /home/axcallet/data/*/*
 	docker system prune -af

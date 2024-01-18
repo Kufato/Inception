@@ -11,7 +11,7 @@ services:
     env_file: .env
     volumes:
       - mariadb:/var/lib/mysql
-    restart: unless-stopped
+    restart: on-failure
     expose:
       - "3306"
   nginx:
